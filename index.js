@@ -3,12 +3,13 @@ const app = express();
 const mongoose = require('mongoose');
 const userRoutes = require("./src/routes/userRoutes");
 const Cors = require('cors');
+require('dotenv').config();
 app.use(Cors())
 app.use(express.json())
 
 
 
-mongoose.connect("mongodb+srv://mayur:mayur9799@cluster0.emmy41q.mongodb.net/?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -25,6 +26,6 @@ app.get('/',(req,res)=>{
 app.use('/',userRoutes);
 
 
-app.listen(8080,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("hello world!")
 })
