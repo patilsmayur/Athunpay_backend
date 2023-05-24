@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const userSchema = require("./src/models/userSchema")
 
 const app = express();
 
