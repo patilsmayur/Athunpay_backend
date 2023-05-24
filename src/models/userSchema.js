@@ -5,10 +5,10 @@ const userSchema = mongoose.Schema({
         maxlength: 50,
         required: true
     },
-    email_id: {
+    email: {
         type: String,
         trim: true,
-        unique: 1,
+        unique: true,
         required: true
     },
     mobile_number: {
@@ -36,6 +36,4 @@ const userSchema = mongoose.Schema({
     }
     
 })
-const User = mongoose.model('User', userSchema);
-
-module.exports = {User}
+module.exports = mongoose.model('Users',userSchema);
