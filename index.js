@@ -2,8 +2,13 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const userRoutes = require("./src/routes/userRoutes");
-const otherAppHistory = require("./src/routes/otherAppAuthHistoryRoutes")
-const netBankingHistory = require("./src/routes/netBankingAuthHistoryRoutes")
+const otherAppHistory = require("./src/routes/otherAppAuthHistoryRoutes");
+const netBankingHistory = require("./src/routes/netBankingAuthHistoryRoutes");
+const transactionAuthHistory = require("./src/routes/transactionAuthHistoryRouters");
+const paymentHistory = require("./src/routes/paymentHistoryRouters")
+
+
+
 const Cors = require('cors');
 require('dotenv').config();
 app.use(Cors())
@@ -28,6 +33,10 @@ app.get('/',(req,res)=>{
 app.use('/',userRoutes);
 app.use('/',otherAppHistory);
 app.use('/',netBankingHistory);
+app.use('/',transactionAuthHistory);
+app.use('/',paymentHistory);
+
+
 
 
 app.listen(process.env.PORT,()=>{

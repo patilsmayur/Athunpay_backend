@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/netbankauthHist',findNetBankingAuthHistory);
-rouute.post('/setnetbankauthHist',setNetBankingAuthHistoryasync);
+router.post('/setnetbankauthHist',setNetBankingAuthHistoryasync);
 
 
 module.exports = router;

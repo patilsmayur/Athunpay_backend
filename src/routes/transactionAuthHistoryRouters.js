@@ -1,10 +1,10 @@
 const express = require('express');
-const { findtransactionAuthHistory, settransactionAuthHistoryasync } = require('../controller/transactionAuthHistoryController');
+const { findtransactionAuthHistory, settransactionAuthHistory} = require('../controller/transactionAuthHistoryController');
 const router = express.Router();
 
 
 router.get('/transactionauthlist',findtransactionAuthHistory);
-router.post('/settransactionauthlist',settransactionAuthHistoryasync);
+router.post('/settransactionauthlist',settransactionAuthHistory);
 
 
 module.exports = router;
