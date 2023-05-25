@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const paymentHistorySchema = new mongoose.Schema({
+const paymenthistorySchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   cardType: { type: String, required: true },
   cardNumber: { type: String, required: true },
@@ -23,4 +23,4 @@ const paymentHistorySchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('PaymentHistory', paymentHistorySchema);
+module.exports = mongoose.model('PaymentHistory', paymenthistorySchema);
