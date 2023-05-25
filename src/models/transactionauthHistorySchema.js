@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const transactionauthHistorySchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   appName: { type: String, required: true },
   appAuthID: { type: String, required: true },
   authTime: { type: Date, default: Date.now },
@@ -16,6 +17,5 @@ const transactionauthHistorySchema = new mongoose.Schema({
   transactionAmount: { type: Number, required: true }
 });
 
-const transactionauthHistory = mongoose.model('transactionauthHistory', transactionauthHistorySchema);
 
-module.exports = transactionauthHistory;
+module.exports = mongoose.model('transactionauthHistory', transactionauthHistorySchema);

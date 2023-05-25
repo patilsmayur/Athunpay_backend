@@ -1,7 +1,9 @@
 const User = require('../models/userSchema');
 
+
 exports.setPIN = async(req,res) =>{
 
+    
     const{full_name,email,mobile_number,usai_id,face_id,pin} = req.body;
 
     const existingPin = await User.findOne({pin})
@@ -17,6 +19,7 @@ exports.setPIN = async(req,res) =>{
       })
       .catch(error => {
         res.status(500).json({error})
+        console.log(error)
       });
 
    

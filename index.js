@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const userRoutes = require("./src/routes/userRoutes");
+const otherAppHistory = require("./src/routes/otherAppAuthHistoryRoutes")
+const netBankingHistory = require("./src/routes/netBankingAuthHistoryRoutes")
 const Cors = require('cors');
 require('dotenv').config();
 app.use(Cors())
@@ -24,6 +26,8 @@ app.get('/',(req,res)=>{
     res.send("<h1>I am Inevitable!</h1>")
 })
 app.use('/',userRoutes);
+app.use('/',otherAppHistory);
+app.use('/',netBankingHistory);
 
 
 app.listen(process.env.PORT,()=>{
