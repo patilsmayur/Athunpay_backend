@@ -15,9 +15,6 @@ const paymenthistorySchema = new mongoose.Schema({
   deviceIPAddress: { type: String, required: true },
   device: { type: String, required: true },
   deviceUniqueID: { type: String, required: true },
-
-
-  
   deviceDistance: { type: Number },
   paymentAmount: { type: Number, required: true }
 });
