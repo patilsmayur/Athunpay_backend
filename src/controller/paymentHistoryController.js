@@ -1,4 +1,4 @@
-const paymentHistory= require('../models/paymenthistorySchema');
+const paymentHistory= require('../models/paymentHistorySchema');
 
 
 exports.findpaymentHistory = async (req, res) => {
@@ -13,7 +13,7 @@ exports.findpaymentHistory = async (req, res) => {
 };
 
 
-exports.setpaymentHistory = async (req, res) => {
+exports.setpaymentHistory = async (request, res) => {
   const history = new paymentHistory({
 
     user: request.body.user,
@@ -40,7 +40,6 @@ exports.setpaymentHistory = async (req, res) => {
     const newHistory = await history.save();
     res.status(201).json(newHistory);
   } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
+    res.status(400).json({ message: err.message });
+  }
 };
-

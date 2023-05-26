@@ -5,14 +5,17 @@ const userRoutes = require("./src/routes/userRoutes");
 const otherAppHistory = require("./src/routes/otherAppAuthHistoryRoutes");
 const netBankingHistory = require("./src/routes/netBankingAuthHistoryRoutes");
 const transactionAuthHistory = require("./src/routes/transactionAuthHistoryRouters");
-const paymentHistory = require("./src/routes/paymentHistoryRouters")
+const paymentHistory = require("./src/routes/paymentHistoryRouters");
+const bodyParser = require('body-parser')
 
 
 
 const Cors = require('cors');
+
 require('dotenv').config();
 app.use(Cors())
 app.use(express.json())
+app.use(bodyParser.json())
 
 
 
