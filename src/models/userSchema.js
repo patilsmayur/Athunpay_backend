@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 
-const usaiSchema = new mongoose.Schema({
-    bank: {
-      type: String,
-    //   minlength:30
-    },
+// const usaiSchema = new mongoose.Schema({
+//     bank: {
+//       type: String,
+//     //   minlength:30
+//     },
      
-    apps: {
-      type: String,
-    //   minlength:30
+//     apps: {
+//       type: String,
+//     //   minlength:30
       
-    }
-  });
+//     }
+//   });
 
 const userSchema = mongoose.Schema({
     full_name: {
@@ -33,13 +33,14 @@ const userSchema = mongoose.Schema({
 
     },
     usai_id: {
-        type:usaiSchema,
+        type: String,
         // required:true,
         // unique: 1
     },
 
     face_id:{
         type:String,
+        default:"Face_ID"
         // minlength:30,
      
     },
