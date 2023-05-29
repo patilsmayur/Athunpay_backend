@@ -38,3 +38,23 @@ exports.verify = async(req,res) =>{
     }
 }
 
+exports.getUser = async(req,res) =>{
+
+  const id = req.params.id;
+
+  User.findOne({ _id: id })
+    .then(user => {
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+
+    
+      res.json(user);
+    })
+    .catch(error => {
+      
+      res.status(500).json({ message: 'Error retrieving user', error });
+    });
+
+}
+
