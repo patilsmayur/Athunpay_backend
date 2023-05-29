@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
 
 // Define the Bank schema
-const addBnkSchema = new mongoose.Schema({
+const addBankSchema = new mongoose.Schema({
+  user: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Users', 
+    required: true
+ },
   name: {
     type: String,
     required: true
@@ -15,6 +20,6 @@ const addBnkSchema = new mongoose.Schema({
     type: String,
     required: true
   }
-});
+},{timestamps:true});
 
 module.exports = mongoose.model('addBank', addBankSchema);
