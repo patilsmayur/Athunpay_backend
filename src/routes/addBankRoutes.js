@@ -3,7 +3,7 @@ const { addBank, allBank } = require('../controller/addBankController');
 const router = express.Router();
 
 router.post('/addBank',addBank);
-router.get('/allBanks',allBank);
+router.get('/allBanks/:id',allBank);
 
 
 module.exports = router;

@@ -33,7 +33,7 @@ const userSchema = mongoose.Schema({
 
     },
     usai_id: {
-        type: usaiSchema,
+        type: String,
         // required:true,
         // unique: 1
     },

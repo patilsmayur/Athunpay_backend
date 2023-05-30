@@ -49,7 +49,7 @@ exports.getUser = async(req,res) =>{
       }
 
     
-      res.json(user);
+      res.json({user});
     })
     .catch(error => {
       

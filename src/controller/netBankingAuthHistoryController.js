@@ -5,7 +5,7 @@ exports.findNetBankingAuthHistory =async (req, res) => {
     const user = req.user
   try {
     const history = await NetBankingAuthHistory.findById({user});
-    res.json(history);
+    res.json({history});
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -37,7 +37,7 @@ exports.setNetBankingAuthHistoryasync = async(req, res) => {
 
   try {
     const newHistory = await history.save();
-    res.status(201).json(newHistory);
+    res.status(201).json({newHistory});
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
