@@ -12,7 +12,7 @@ const addBankSchema = new mongoose.Schema({
     required: true
  },
   bankdata: {
-    type: any,
+    type: String,
     required: true
   }
 },{timestamps:true});
