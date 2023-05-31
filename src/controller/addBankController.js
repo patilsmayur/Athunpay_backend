@@ -18,10 +18,10 @@ exports.addBank = async(req,res)=>{
 }
 
 exports.allBank = async (req,res)=>{
-    const user = req.body.user;
+    const id = req.params.id;
     try {
-      const bank = await Bank.find({user});
-      res.json(bank);
+      const bank = await Bank.find({user:id});
+      res.json({bank});
     } catch (err) {
       res.status(500).json({ message: err.message });
     }

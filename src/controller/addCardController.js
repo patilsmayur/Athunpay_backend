@@ -16,10 +16,10 @@ exports.addCard = async(req,res) =>{
 }
 
 exports.allCard = async(req,res)=>{
-    const user = req.body.user;
+    const id = req.params.id;
     try {
-      const card = await Card.find({user});
-      res.json(card);
+      const card = await Card.find({user:id});
+      res.json({card});
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
