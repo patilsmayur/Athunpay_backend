@@ -11,8 +11,8 @@ const addBankSchema = new mongoose.Schema({
     ref: 'Users', 
     required: true
  },
-  name: {
-    type: String,
+  bankdata: {
+    type: any,
     required: true
   }
 },{timestamps:true});
