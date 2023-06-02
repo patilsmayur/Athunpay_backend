@@ -58,3 +58,20 @@ exports.getUser = async(req,res) =>{
 
 }
 
+exports.login = (req,res) =>{
+  const {mobile_number} = req.body;
+  User.find({mobile_number:mobile_number}).then(
+    user=>{
+      if(user) {
+        res.status(200).json({user});
+      }
+      else{
+      return res.status(400).json({message:"Not Registered"});
+      }
+      
+    }
+  ).catch(err => {
+    res.status(500).json({err})
+  })
+
+}
