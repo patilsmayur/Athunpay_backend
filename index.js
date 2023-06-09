@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 const vision = require('@google-cloud/vision');
 // Creates a client
 const client = new vision.ImageAnnotatorClient({
-  keyFilename: 'authnpay-1663c8e56fc5.json'
+  keyFilename: 'authnpay-389005-b5d7103f1539.json'
 });
 
 // Performs label detection on the image file
