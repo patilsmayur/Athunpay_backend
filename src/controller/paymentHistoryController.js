@@ -17,11 +17,21 @@ exports.setpaymentHistory = async (request, res) => {
   const history = new paymentHistory({
 
     user: request.body.user,
+    cardType: request.body.cardType,
+    cardNumber: request.body.cardNumber,
+    cardProvider: request.body.cardProvider,
     bankName: request.body.bankName,
     paymentTime: request.body.paymentAmount,
     paymentDate: request.body.paymentDate,
     deviceCity: request.body.deviceCity,
-    deviceIPAddress: request.body.deviceIPAddress
+    deviceLongitude: request.body.deviceLongitude,
+    deviceLatitude:request.body.deviceLatitude,
+    status:request.body.status,
+    deviceIPAddress: request.body.deviceIPAddress,
+    device: request.body.device,
+    deviceUniqueID: request.body.deviceUniqueID,
+    deviceDistance: request.body.deviceDistance,
+    paymentAmount:request.body.paymentAmount
    
 
   });
