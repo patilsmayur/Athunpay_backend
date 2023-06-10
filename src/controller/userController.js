@@ -78,7 +78,7 @@ exports.login = async (req,res) =>{
     const {mobile_number} = req.body;
     const foundData = await User.find({mobile_number:mobile_number}).exec();
     if(foundData && foundData.length!=0){
-        res.json(foundData);
+        res.json({foundData});
     }
     else{
         res.status(404).json({ message: 'Data not found' });
