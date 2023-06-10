@@ -24,14 +24,14 @@ exports.setpaymentHistory = async (request, res) => {
     paymentTime: request.body.paymentAmount,
     paymentDate: request.body.paymentDate,
     deviceCity: request.body.deviceCity,
-    deviceLongitude: request.body.deviceLatitude,
-    deviceLatitude: request.body.deviceLatitude,
-    status: request.body.status,
+    deviceLongitude: request.body.deviceLongitude,
+    deviceLatitude:request.body.deviceLatitude,
+    status:request.body.status,
     deviceIPAddress: request.body.deviceIPAddress,
     device: request.body.device,
     deviceUniqueID: request.body.deviceUniqueID,
     deviceDistance: request.body.deviceDistance,
-    paymentAmount: request.body.paymentAmount
+    paymentAmount:request.body.paymentAmount
    
 
   });
