@@ -42,7 +42,7 @@ exports.getUser = async(req,res) =>{
 
   const id = req.params.id;
 
-  User.findOne({ _id: id })
+  await User.findOne({ _id: id })
     .then(user => {
       if (!user) {
         return res.status(404).json({ message: 'User not found' });
@@ -58,20 +58,33 @@ exports.getUser = async(req,res) =>{
 
 }
 
-exports.login = (req,res) =>{
-  const {phone} = req.body;
-  User.find({mobile_number:phone}).then(
-    user=>{
-      if(user) {
-        res.status(200).json({user});
-      }
-      else{
-      return res.status(400).json({message:"Not Registered"});
-      }
-      
-    }
-  ).catch(err => {
-    res.status(500).json({err})
-  })
+exports.login = async (req,res) =>{
+  // const {phone} = req.body;
 
+  // User.findOne({phone}).then(
+  //   user=>{
+  //     if(user) {
+  //       res.status(200).json({user});
+  //     }
+  //     else{
+  //     return res.status(400).json({message:"Not Registered"});
+  //     }
+      
+  //   }
+  // ).catch(err => {
+  //   res.status(500).json({err})
+  // })
+  try{
+    const {mobile_number} = req.body;
+    const foundData = await User.find({mobile_number:mobile_number}).exec();
+    if(foundData && foundData.length!=0){
+        res.json(foundData);
+    }
+    else{
+        res.status(404).json({ message: 'Data not found' });
+    }
+}   
+catch(err){
+    res.send("Error"+err);
+}
 }

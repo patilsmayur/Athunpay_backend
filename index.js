@@ -11,23 +11,23 @@ const addCard = require("./src/routes/addCardRoutes");
 const bodyParser = require('body-parser');
 const vision = require('@google-cloud/vision');
 // Creates a client
-const client = new vision.ImageAnnotatorClient({
-  keyFilename: 'authnpay-389005-b5d7103f1539.json'
-});
+// const client = new vision.ImageAnnotatorClient({
+//   keyFilename: 'authnpay-389005-b5d7103f1539.json'
+// });
 
 // Performs label detection on the image file
-client
-  .labelDetection('./nature_1.jpg')
-  .then(results => {
-    const labels = results[0].labelAnnotations;
+// client
+//   .labelDetection('./nature_1.jpg')
+//   .then(results => {
+//     const labels = results[0].labelAnnotations;
 
-    console.log('Labels:');
-    labels.forEach(label => console.log(label));
-    //console.log(results);
-  })
-  .catch(err => {
-    console.error('ERROR:', err);
-  });
+//     console.log('Labels:');
+//     labels.forEach(label => console.log(label));
+//     //console.log(results);
+//   })
+//   .catch(err => {
+//     console.error('ERROR:', err);
+//   });
 
 
 
