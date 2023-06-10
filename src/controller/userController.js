@@ -59,8 +59,8 @@ exports.getUser = async(req,res) =>{
 }
 
 exports.login = (req,res) =>{
-  const {mobile_number} = req.body;
-  User.find({mobile_number:mobile_number}).then(
+  const {phone} = req.body;
+  User.find({mobile_number:phone}).then(
     user=>{
       if(user) {
         res.status(200).json({user});
