@@ -8,6 +8,7 @@ const transactionAuthHistory = require("./src/routes/transactionAuthHistoryRoute
 const paymentHistory = require("./src/routes/paymentHistoryRouters");
 const addBank = require("./src/routes/addBankRoutes");
 const addCard = require("./src/routes/addCardRoutes");
+const addApp = require('./src/routes/otherAppRoutes')
 const bodyParser = require('body-parser');
 const vision = require('@google-cloud/vision');
 // Creates a client
@@ -64,6 +65,7 @@ app.use('/',transactionAuthHistory);
 app.use('/',paymentHistory);
 app.use('/',addBank);
 app.use('/',addCard);
+app.use('/',addApp);
 
 
 
