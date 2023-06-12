@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const paymenthistorySchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  AVID: {type:String},
+  avid: {type:String},
   cardType:{ type: String },
   cardNumber:{ type: String},
   cardProvider:{ type: String},
