@@ -17,7 +17,7 @@ exports.setpaymentHistory = async (request, res) => {
   const history = new paymentHistory({
 
     user: request.body.user,
-    avid:req.body.avid,
+    avid: request.body.avid,
     cardType: request.body.cardType,
     cardNumber: request.body.cardNumber,
     cardProvider: request.body.cardProvider,
