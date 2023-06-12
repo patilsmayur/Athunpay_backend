@@ -2,9 +2,9 @@ const paymentHistory= require('../models/paymentHistorySchema');
 
 
 exports.findpaymentHistory = async (req, res) => {
-    const user = req.body.user;
+    const user = req.params.user;
   try {
-    const history = await paymentHistory.find({user});
+    const history = await paymentHistory.find({user:user});
     res.json({history});
   } catch (err) {
     res.status(500).json({ message: err.message });

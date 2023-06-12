@@ -3,7 +3,7 @@ const { findpaymentHistory, setpaymentHistory } = require('../controller/payment
 const router = express.Router();
 
 
-router.get('/paymenthistorylist',findpaymentHistory);
+router.get('/paymenthistorylist/:user',findpaymentHistory);
 router.post('/setpaymenthistorylist',setpaymentHistory );
 
 
