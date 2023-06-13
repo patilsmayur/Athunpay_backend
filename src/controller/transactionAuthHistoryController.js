@@ -2,9 +2,9 @@ const transactionAuthHistory = require('../models/transactionauthHistorySchema')
 
 
 exports.findtransactionAuthHistory = async (req, res) => {
-    const user = req.body.user;
+  const user = req.params.user;
   try {
-    const history = await transactionAuthHistory.find({user});
+    const history = await transactionAuthHistory.find({user:user});
     res.json({history});
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -18,7 +18,7 @@ exports.settransactionAuthHistory = async (req, res) => {
 
   user: req.body.user,
   appName: req.body.appName,
-  appAuthID: req.body.authTime,
+  appAuthID: req.body.appAuthID,
   authTime: req.body.authTime,
   authDate: req.body.authDate,
   authCity: req.body.authCity,
