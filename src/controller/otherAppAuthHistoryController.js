@@ -2,9 +2,9 @@ const OtherAppAuthHistory = require('../models/otherAppAuthHistorySchema');
 
 
 exports.findOtherAppAuthHistory = async (req, res) => {
-    const user = req.body.user;
+  const user = req.params.user;
   try {
-    const history = await OtherAppAuthHistory.find({user});
+    const history = await OtherAppAuthHistory.find({user:user});
     res.json({history});
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -16,6 +16,7 @@ exports.findOtherAppAuthHistory = async (req, res) => {
 exports.setOtherAppAuthHistory = async (req, res) => {
   const history = new OtherAppAuthHistory({
     user: req.body.user,
+    
     appName: req.body.appName,
     authID: req.body.authID,
     loginDate: req.body.loginDate,
