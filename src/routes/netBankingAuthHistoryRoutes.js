@@ -3,7 +3,7 @@ const { findNetBankingAuthHistory, setNetBankingAuthHistoryasync } = require('..
 const router = express.Router();
 
 
-router.get('/netbankauthHist',findNetBankingAuthHistory);
+router.get('/netbankauthHist/:user',findNetBankingAuthHistory);
 router.post('/setnetbankauthHist',setNetBankingAuthHistoryasync);
 
 
