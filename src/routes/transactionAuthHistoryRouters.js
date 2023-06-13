@@ -3,7 +3,7 @@ const { findtransactionAuthHistory, settransactionAuthHistory} = require('../con
 const router = express.Router();
 
 
-router.get('/transactionauthlist',findtransactionAuthHistory);
+router.get('/transactionauthlist/:user',findtransactionAuthHistory);
 router.post('/settransactionauthlist',settransactionAuthHistory);
 
 
