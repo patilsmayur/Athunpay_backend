@@ -2,9 +2,9 @@ const NetBankingAuthHistory = require('../models/netBankingAuthHistorySchema');
 
 
 exports.findNetBankingAuthHistory =async (req, res) => {
-    const user = req.user
+  const user = req.params.user;
   try {
-    const history = await NetBankingAuthHistory.findById({user});
+    const history = await NetBankingAuthHistory.find({user:user});
     res.json({history});
   } catch (err) {
     res.status(500).json({ message: err.message });
