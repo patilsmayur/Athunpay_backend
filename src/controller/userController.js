@@ -59,21 +59,7 @@ exports.getUser = async(req,res) =>{
 }
 
 exports.login = async (req,res) =>{
-  // const {phone} = req.body;
-
-  // User.findOne({phone}).then(
-  //   user=>{
-  //     if(user) {
-  //       res.status(200).json({user});
-  //     }
-  //     else{
-  //     return res.status(400).json({message:"Not Registered"});
-  //     }
-      
-  //   }
-  // ).catch(err => {
-  //   res.status(500).json({err})
-  // })
+ 
   try{
     const {mobile_number} = req.body;
     const foundData = await User.find({mobile_number:mobile_number}).exec();
@@ -87,4 +73,29 @@ exports.login = async (req,res) =>{
 catch(err){
     res.send("Error"+err);
 }
+}
+
+exports.changePIN = async(req,res) =>{
+  try {
+    const id = req.params.id;
+    const newPin = req.body.pin;
+
+    // Find the user by ID
+    const user = await User.findById({_id:id});
+    
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Update the user's pin
+    user.pin = newPin;
+    await user.save().then(updatedUser => {
+      res.status(201).json({ updatedUser })
+    })
+    
+    
+  } catch (error) {
+    console.error("server error"+error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 }
