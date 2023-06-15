@@ -7,7 +7,7 @@ const transactionauthHistorySchema = new mongoose.Schema({
  },
   appAuthID: { type: String, //required: true 
 },
-  authTime: { type: Date, default: Date.now 
+  authTime: { type: String 
   },
   authDate: { type: Date, //required: true 
 },

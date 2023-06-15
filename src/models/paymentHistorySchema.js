@@ -7,7 +7,7 @@ const paymenthistorySchema = new mongoose.Schema({
   cardNumber:{ type: String},
   cardProvider:{ type: String},
   bankName: { type: String, required: true },
-  paymentTime: { type: Date, default: Date.now },
+  paymentTime: { type: String},
   paymentDate: { type: Date, required: true },
   deviceCity: { type: String, required: true },
   deviceLatitude: { type: String, required: true },
