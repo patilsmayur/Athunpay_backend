@@ -1,9 +1,9 @@
 const Bank = require('../models/addBankSchema');
 
 exports.addBank = async(req,res)=>{
-    const{id,user,bankdata} = req.body;
+    const{id,accno,user,bankdata,type} = req.body;
     const bank = new Bank({
-        id,user,bankdata
+        id,accno,user,bankdata,type
     })
 
     await bank.save()
