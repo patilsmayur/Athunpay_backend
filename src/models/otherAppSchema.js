@@ -10,7 +10,12 @@ const otherAppSchema = new mongoose.Schema({
       title: {
         type: String,
         required: true
+      },
+      custid: {
+        type: String,
+        required: true
       }
+      
 },{timestamps:true});
 
 module.exports = mongoose.model('otherapp', otherAppSchema);

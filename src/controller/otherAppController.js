@@ -1,9 +1,9 @@
 const APP = require('../models/otherAppSchema.js');
 
 exports.addapp = async(req,res)=>{
-    const{user,title} = req.body;
+    const{user,title,custid} = req.body;
     const app = new APP({
-        user,title
+        user,title,custid
     })
 
     await app.save()
